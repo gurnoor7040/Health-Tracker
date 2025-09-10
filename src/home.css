@@ -1,0 +1,192 @@
+/* Reset */
+.home-page {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-section {
+  background: url("/background.jpg") no-repeat center center;
+  background-size: cover;
+  height: 70vh; /* This controls the max height of the image area */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  color: white;
+  overflow: hidden;
+}
+
+/* Optional: overlay for contrast */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
+  z-index: 0;
+}
+
+.welcome-text {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.welcome-text h1 {
+  margin-left: 14.5rem;
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.login-form-section {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.login-form-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+/* Inputs & buttons */
+.login-form-box input,
+.login-form-box button {
+  width: 100%;
+  padding: 0.75em;
+  margin: 0.5em 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.login-form-box button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.login-form-box button:hover {
+  background-color: #388e3c;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.5em 0;
+}
+
+.divider .line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ccc;
+  border: none;
+}
+
+.divider .or-text {
+  padding: 0 1em;
+  color: #666;
+  font-weight: bold;
+}
+
+/* Sign up button */
+.signup-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75em;
+  width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.signup-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Modal and error */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 2em;
+  border-radius: 8px;
+  width: 300px;
+  max-width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.close-btn {
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #d32f2f;
+}
+
+.error-message {
+  color: red;
+  margin-top: 1em;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .login-form-section {
+    position: static;
+    transform: none;
+    margin-top: 2rem;
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .welcome-text {
+    margin-left: 0;
+  }
+}

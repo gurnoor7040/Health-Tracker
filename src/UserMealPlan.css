@@ -1,0 +1,128 @@
+/* Container for each day */
+.day-section {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+/* Day heading */
+.day-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Meal type heading (breakfast/lunch etc.) */
+.meal-type-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Layout for all meals under a type */
+.meal-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.day-section {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.day-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.meal-type-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.meal-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.meal-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  width: 260px;
+  height: 360px; 
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Title with fixed height & ellipsis */
+.meal-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  height: 48px;
+  line-height: 1.2;
+  color: #333;
+  text-align: center;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+/* Image box with fixed height */
+.meal-card img {
+  width: 100%;
+  height: 140px;             
+  object-fit: cover;        
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Calories & recipe with fixed spacing */
+.calories {
+  font-weight: 500;
+  margin: 4px 0;
+  color: #444;
+  text-align: center;
+  height: 20px;             
+}
+
+.recipe-link {
+  color: #0077cc;
+  text-decoration: underline;
+  margin-bottom: 6px;
+  display: inline-block;
+  font-size: 0.95rem;
+  height: 20px;            
+  overflow: hidden;
+}
+
+.meal-card button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  height: 36px;             
+}
+
+.meal-card button:hover {
+  background-color: #005fa3;
+}

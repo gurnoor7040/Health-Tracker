@@ -1,0 +1,65 @@
+.contact-page {
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-section {
+  background: url("/background.jpg") no-repeat center center;
+  background-size: cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: white;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;  /* add this block if not present */
+  margin-top: 0;      /* optional, adjust spacing */
+  font-weight: 600;   /* optional, for emphasis */
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+}
+
+.contact-info {
+  padding: 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-info h3 {
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+.hero-text h1,
+.hero-text h2 {
+  color: white;
+}
+
+.hero-text-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin: 0 auto; /* center within full width */
+}

@@ -1,0 +1,166 @@
+.user-home-page {
+  width: 100%;
+}
+
+.hero-section {
+  background: url("/background.jpg") no-repeat center center;
+  background-size: cover;
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
+  z-index: 0;
+}
+
+.hero-text-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.left h1 {
+  font-size: 3.5rem;   /* Bigger Welcome + Name */
+  font-weight: bold;
+  margin: 0;
+  color: white;
+}
+
+.right {
+  text-align: right;
+  color: white;
+}
+
+.right p {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.right h2 {
+  font-size: 2.4rem;
+  margin: 0.2rem 0 0;
+  font-weight: bold;
+  color: white;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.main-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+form {
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+input {
+  padding: 0.6rem 1rem;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #ff5656eb;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin-right: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e04848;
+}
+
+/* Meals List */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li button {
+  margin-left: 1rem;
+  padding: 0.4rem 0.8rem;
+}
+
+li {
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li .meal-info {
+  flex-grow: 1;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+li .meal-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+
+/* Edit Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.modal-content input {
+  width: 100%;
+}

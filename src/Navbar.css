@@ -1,0 +1,88 @@
+/* Full-width navbar */
+.navbar {
+  width: 100%;
+  background-color: #e72828d9;
+  padding: 0.8rem 0; /* thinner height */
+  display: flex;
+  justify-content: center; /* centers navbar-container horizontally */
+  top: 0;
+  z-index: 1000;
+}
+
+/* Centered container inside navbar */
+.navbar-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo (aligned left) */
+.nav-logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: default;
+}
+
+/* Right-aligned links & buttons */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Nav links */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  transition: box-shadow 0.3s ease;
+  display: inline-block; 
+}
+
+.nav-links a:hover {
+  text-decoration: none; 
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.1); 
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Logout button styling */
+.nav-links button {
+  background: white;
+  color: #e72828d9;
+  border: none;
+  padding: 6px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.nav-links a,
+.nav-links button {
+  font-size: 1.3rem; 
+}
+
+.nav-links button:hover {
+  background-color: #ffe6e6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+}
