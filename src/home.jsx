@@ -199,7 +199,7 @@ export default function Home({ setIsLoggedIn }) {
               <label htmlFor="male">Male</label>
               <br />
 
-              <label htmlFor="height">Height</label>
+              <label htmlFor="height">Height(in cms)</label>
               <input
                 id="height"
                 name="height"
@@ -209,7 +209,7 @@ export default function Home({ setIsLoggedIn }) {
                 required
               />
               <br />
-              <label htmlFor="weight">Weight</label>
+              <label htmlFor="weight">Weight(in kgs)</label>
               <input
                 id="weight"
                 name="weight"
