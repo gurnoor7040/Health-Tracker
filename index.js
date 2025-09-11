@@ -7,6 +7,7 @@ import axios from "axios";
 import bodyParser from "body-parser";
 import session from "express-session";
 import passport from "passport";
+import { Strategy as LocalStrategy } from "passport-local";
 
 dotenv.config();
 
@@ -66,8 +67,34 @@ passport.deserializeUser(async (email, done) => {
 });
 
 export { db, app };
-
 const saltRounds = 10;
+
+// Configure LocalStrategy
+passport.use(new LocalStrategy({
+    usernameField: "email",
+    passwordField: "password"
+  },
+  async (email, password, done) => {
+    try {
+      const result = await db.query("SELECT * FROM users WHERE email = $1", [email]);
+      if (result.rows.length === 0) {
+        return done(null, false, { message: "User not found" });
+      }
+
+      const user = result.rows[0];
+      const valid = await bcrypt.compare(password, user.password);
+
+      if (!valid) {
+        return done(null, false, { message: "Incorrect password" });
+      }
+
+      return done(null, user);
+    } catch (err) {
+      return done(err);
+    }
+  }
+));
+
 
 async function getCaloriesFromNutritionix(mealDescription) {
     try {
@@ -115,34 +142,8 @@ app.get("/me", (req, res) => {
   }
 });
 
-
-app.post("/", async (req, res) => {
-    const pass = req.body.password;
-    console.log(req.body);
-    try {
-        const result = await db.query("SELECT * FROM users WHERE email = $1", [req.body.email]);
-        if (result.rows.length > 0) {
-        const user = result.rows[0];
-        const storedHashedPassword = user.password;
-        const valid = await bcrypt.compare(pass, storedHashedPassword);
-        if (valid) {
-            req.login(user, (err) => {
-                if (err) {
-                    console.error(err);
-                    return res.json({ success: false, message: "Login failed." });
-                }
-                res.json({ success: true, message: "Login successful." });
-            });
-        } else {
-            res.json({ success: false, message: "Incorrect Password!" });
-        }
-        } else {
-        res.json({ success: false, message: "User not registered. Please sign up first." });
-        }
-    } catch (err) {
-        console.error("Backend error:", err);
-        res.status(500).json({ success: false, message: "Server error. Please try again later." });
-    }
+app.post("/", passport.authenticate("local"), (req, res) => {
+    res.json({ success: true, message: "Login successful", user: req.user });
 });
 
 app.post("/register", async (req, res) => {
