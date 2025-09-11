@@ -9,7 +9,7 @@ import UserMealPlan from './userMealPlan';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ContactUs from './contactUs';
-import axiosInstance from './path-to-your-axiosInstance';
+import axiosInstance from './axiosInstance';
 
 
 function App() {
