@@ -9,12 +9,14 @@ import UserMealPlan from './userMealPlan';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ContactUs from './contactUs';
+import axiosInstance from './path-to-your-axiosInstance';
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/me', { withCredentials: true })
+    axiosInstance.get('/me')
       .then((res) => {
         setIsLoggedIn(res.data.success);
       })
@@ -24,7 +26,6 @@ function App() {
       });
   }, []);
   
-
   return (
     <Router>
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />

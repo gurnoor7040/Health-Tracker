@@ -21,7 +21,7 @@ export default function UserMealPlan() {
     const fetchUserInfo = async () => {
       try {
         const response = await axiosInstance.get(
-          `http://localhost:3000/get-user-details?email=${userEmail}`
+          `/get-user-details?email=${userEmail}`
         );
         const { target_calories, diet_preference } = response.data;
         setTargetCalories(target_calories - 400);
@@ -34,7 +34,7 @@ export default function UserMealPlan() {
 
     const fetchExistingPlan = async () => {
       try {
-        const response = await axiosInstance.get(`http://localhost:3000/get-meal-plan?email=${userEmail}`);
+        const response = await axiosInstance.get(`/get-meal-plan?email=${userEmail}`);
         const meals = response.data.meals;
 
         const grouped = {};
@@ -68,7 +68,7 @@ export default function UserMealPlan() {
 
     try {
       setGenerating(true); // Start loading
-      const response = await axiosInstance.post("http://localhost:3000/generate-meal-plan", {
+      const response = await axiosInstance.post("/generate-meal-plan", {
         user_email: userEmail,
         calories: targetCalories,
         diet: dietPreference,
@@ -88,7 +88,7 @@ export default function UserMealPlan() {
 
   const fetchMealPlan = async () => {
     try {
-      const response = await axiosInstance.get(`http://localhost:3000/get-meal-plan?email=${userEmail}`);
+      const response = await axiosInstance.get(`/get-meal-plan?email=${userEmail}`);
       const meals = response.data.meals;
 
       const grouped = {};
@@ -111,7 +111,7 @@ export default function UserMealPlan() {
     try {
       setRegenerating({ day, type }); // Start loading
 
-      const res = await axiosInstance.post("http://localhost:3000/meal-regenerate", {
+      const res = await axiosInstance.post("/meal-regenerate", {
         user_email: userEmail,
         dayOfWeek: day,
         mealType: type,

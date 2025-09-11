@@ -23,7 +23,7 @@ export default function UserHome() {
         }
         let fetchUserDetails = async () => {
             try {
-                const res = await axiosInstance.get("http://localhost:3000/user-name", {
+                const res = await axiosInstance.get("/user-name", {
                     params: { email: userEmail }
                 });
                 if (res.data.success) {
@@ -38,7 +38,7 @@ export default function UserHome() {
         };
         let fetchMealsToday = async () => {
             try {
-                const res = await axiosInstance.post("http://localhost:3000/meals-today", {email: userEmail});
+                const res = await axiosInstance.post("/meals-today", {email: userEmail});
                 if (res.data.success) {
                     setMeals(res.data.meals);
                 }
@@ -59,7 +59,7 @@ export default function UserHome() {
     let addMeal = async (event) => {
         event.preventDefault();
         try {
-            const response =  await axiosInstance.post("http://localhost:3000/add-meal",mealData);
+            const response =  await axiosInstance.post("/add-meal",mealData);
             if(response.data.success) {
                 const newMeal = {
                     meal_id: response.data.meal_id,
@@ -80,7 +80,7 @@ export default function UserHome() {
 
     let handleDeleteMeal = async (mealId) => {
         try {
-            const res = await axiosInstance.delete(`http://localhost:3000/delete-meal/${mealId}`);
+            const res = await axiosInstance.delete(`/delete-meal/${mealId}`);
             if (res.data.success) {
             setMeals(meals.filter(meal => meal.meal_id !== mealId));
             } else {
@@ -142,7 +142,7 @@ export default function UserHome() {
                         <form onSubmit={async (e) => {
                             e.preventDefault();
                             try {
-                            const res = await axios.put(`http://localhost:3000/edit-meal/${editingMeal.meal_id}`, {
+                            const res = await axios.put(`/edit-meal/${editingMeal.meal_id}`, {
                                 meal: editingMeal.meal_name,
                                 calories: editingMeal.calories
                             });

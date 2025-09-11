@@ -22,7 +22,7 @@ export default function UserProfile() {
 
         const fetchDetails = async () => {
             try {
-                const res = await axiosInstance.get("http://localhost:3000/user-details", {
+                const res = await axiosInstance.get("/user-details", {
                     params: { email: userEmail }
                 });
                 if (res.data.success) {
@@ -69,7 +69,7 @@ export default function UserProfile() {
         updatedField.activity = activityMap[updatedField.activity] || updatedField.activity;
 
         try {
-            const res = await axiosInstance.put("http://localhost:3000/update-user-details", updatedField);
+            const res = await axiosInstance.put("/update-user-details", updatedField);
             if (res.data.success) {
                 setEditingField(null);
             } else {

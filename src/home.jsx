@@ -36,7 +36,7 @@ export default function Home({ setIsLoggedIn }) {
   let submit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axiosInstance.post("http://localhost:3000", formData, {
+      const response = await axiosInstance.post("/", formData, {
         withCredentials: true,
       });
 
@@ -60,7 +60,7 @@ export default function Home({ setIsLoggedIn }) {
   let mSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axiosInstance.post("http://localhost:3000/register", mdata, {
+      const response = await axiosInstance.post("/register", mdata, {
         withCredentials: true,
       });
 

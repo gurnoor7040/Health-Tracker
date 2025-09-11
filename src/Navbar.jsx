@@ -1,16 +1,17 @@
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Navbar.css';
+import axiosInstance from './axiosInstance';
 
 export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:3000/logout", { withCredentials: true });
+      await axiosInstance.get("/logout", { withCredentials: true });
       setIsLoggedIn(false);
       sessionStorage.setItem("isLoggedIn", "false");
-      window.location.href = "/"; // force refresh to clear stale UI
+      window.location.href = "/"; 
     } catch (err) {
       console.error("Logout failed:", err);
     }
