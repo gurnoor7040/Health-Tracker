@@ -16,7 +16,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 0;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .left h1 {
-  font-size: 3.5rem;   /* Bigger Welcome + Name */
+  font-size: 3.5rem;
   font-weight: bold;
   margin: 0;
   color: white;
@@ -106,7 +106,6 @@ button:hover {
   background-color: #e04848;
 }
 
-/* Meals List */
 ul {
   list-style: none;
   padding-left: 0;
@@ -138,8 +137,6 @@ li .meal-actions {
   gap: 0.5rem;
 }
 
-
-/* Edit Modal */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -163,4 +160,50 @@ li .meal-actions {
 
 .modal-content input {
   width: 100%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .hero-text-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .left h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .right p {
+    font-size: 1rem;
+  }
+
+  .right h2 {
+    font-size: 1.5rem;
+  }
+
+  .main-content {
+    padding: 0 1rem;
+  }
+
+  input {
+    max-width: 100%;
+  }
+
+  button {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  li .meal-actions {
+    margin-top: 0.5rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
 }

@@ -8,7 +8,7 @@
 .hero-section {
   background: url("/background.jpg") no-repeat center center;
   background-size: cover;
-  height: 70vh; /* This controls the max height of the image area */
+  height: 70vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -18,12 +18,11 @@
   overflow: hidden;
 }
 
-/* Optional: overlay for contrast */
 .hero-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 0;
 }
 
@@ -34,12 +33,13 @@
 }
 
 .welcome-text h1 {
-  margin-left: 14.5rem;
   font-size: 5rem;
   font-weight: bold;
   color: white;
+  margin: 0;
 }
 
+/* Login form section remains unchanged */
 .login-form-section {
   padding: 2rem;
   display: flex;
@@ -56,7 +56,6 @@
   color: black;
 }
 
-/* Inputs & buttons */
 .login-form-box input,
 .login-form-box button {
   width: 100%;
@@ -81,7 +80,6 @@
   background-color: #388e3c;
 }
 
-/* Divider */
 .divider {
   display: flex;
   align-items: center;
@@ -102,7 +100,6 @@
   font-weight: bold;
 }
 
-/* Sign up button */
 .signup-btn {
   background-color: #007bff;
   color: white;
@@ -119,7 +116,6 @@
   background-color: #0056b3;
 }
 
-/* Modal and error */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -169,13 +165,21 @@
   font-size: 0.9rem;
 }
 
+/* Responsive tweaks */
 @media (max-width: 768px) {
   .hero-section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    height: auto;
+    min-height: 50vh;
     text-align: center;
+  }
+
+  .welcome-text h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
   }
 
   .login-form-section {
@@ -188,5 +192,6 @@
 
   .welcome-text {
     margin-left: 0;
+    padding: 1rem;
   }
 }

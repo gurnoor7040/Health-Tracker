@@ -32,9 +32,9 @@
 }
 
 .hero-text h2 {
-  font-size: 2.5rem;  /* add this block if not present */
-  margin-top: 0;      /* optional, adjust spacing */
-  font-weight: 600;   /* optional, for emphasis */
+  font-size: 2.5rem;
+  margin-top: 0;
+  font-weight: 600;
 }
 
 .hero-text p {
@@ -61,5 +61,40 @@
   width: 100%;
   max-width: 1200px;
   padding: 0 2rem;
-  margin: 0 auto; /* center within full width */
+  margin: 0 auto;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    height: auto;
+    min-height: 200px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .contact-info {
+    padding: 1rem;
+  }
+
+  .hero-text-container {
+    padding: 0 1rem;
+  }
 }
